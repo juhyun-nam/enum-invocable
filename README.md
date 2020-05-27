@@ -1,8 +1,9 @@
 # invocable-helper
 
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/juhyun-nam/invocation-binder.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/juhyun-nam/invocation-binder/alerts/)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Build Status](https://travis-ci.org/juhyun-nam/invocation-binder.svg?branch=master)](https://travis-ci.org/juhyun-nam/invocation-binder)
+[![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/juhyun-nam/invocation-binder.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/juhyun-nam/invocation-binder/context:cpp)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/juhyun-nam/invocation-binder.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/juhyun-nam/invocation-binder/alerts/)
 
 ## 목적
 enum이 하나 있고, enum 요소 각각에 매칭되는 멤버 함수가 있다고 가정하면,
