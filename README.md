@@ -1,5 +1,6 @@
 # invocable-helper
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8fa51ba1fa464ed58f74329731fe8071)](https://app.codacy.com/manual/juhyun-nam/invocation-binder?utm_source=github.com&utm_medium=referral&utm_content=juhyun-nam/invocation-binder&utm_campaign=Badge_Grade_Dashboard)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Build Status](https://travis-ci.org/juhyun-nam/invocation-binder.svg?branch=master)](https://travis-ci.org/juhyun-nam/invocation-binder)
 [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/juhyun-nam/invocation-binder.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/juhyun-nam/invocation-binder/context:cpp)
