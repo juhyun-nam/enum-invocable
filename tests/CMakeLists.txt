@@ -1,7 +1,7 @@
 
 add_executable(
   invocation_binder_test
-  invocation_binder_test.cpp
+  invocation_binder_test.cc
 )
 
 target_compile_options(invocation_binder_test
