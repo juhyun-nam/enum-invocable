@@ -12,6 +12,7 @@ jobs:
             - llvm-toolchain-trusty-3.9
           packages:
             - clang-3.9
+            - g++-6
             - lcov
       env:
         - MATRIX_EVAL="CC=clang-3.9 && CXX=clang++-3.9"
