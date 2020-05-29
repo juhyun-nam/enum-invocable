@@ -1,11 +1,10 @@
-/**
- * @file invocation_binder.hpp
- * @brief invocation_binder main header file
- * @author juhyun-nam
- */
+/// \file invocation_binder.hpp
+/// \brief invocation_binder main header file
+/// \author juhyun-nam
+///
 
-#ifndef INVOCATION_BINDER_INVOCATION_BINDER_HPP
-#define INVOCATION_BINDER_INVOCATION_BINDER_HPP
+#ifndef INVOCATION_BINDER_INVOCATION_BINDER_H_
+#define INVOCATION_BINDER_INVOCATION_BINDER_H_
 
 #include <cstddef>
 namespace detail {
@@ -49,4 +48,4 @@ class InvocationBinder {
   mem_fn_t fn_array_[kMax];
 };
 
-#endif  // INVOCATION_BINDER_INVOCATION_BINDER_HPP
+#endif  // INVOCATION_BINDER_INVOCATION_BINDER_H_
