@@ -8,18 +8,59 @@
 [![codecov](https://codecov.io/gh/juhyun-nam/invocation-binder/branch/master/graph/badge.svg)](https://codecov.io/gh/juhyun-nam/invocation-binder)
 
 ## 목적
-enum이 하나 있고, enum 요소 각각에 매칭되는 멤버 함수가 있다고 가정하면,
-
-runtime에 각 enum 요소에 대해 매칭되는 멤버함수를 호출하고 싶을 수 있다.
-
-
-invocation-binder는 해당 멤버함수들에대한 함수 테이블을 compile 타임에 생성하고
-
-runtime에 enum에 대한 멤버함수 호출을 도와준다.
+Enum과 멤버 메소드의 mapped function table을 자동으로 생성.
 
 ## The Gist
 
 ```cpp
-#include "invocation_binder.h"
+enum class State {
+  kON,
+  kOFF
+};
+int main() {
+  Object obj;
+  obj.Call(State::kON);  // callON
+  obj.Call(State::kOFF);  // callOFF
+}
 
+```
+### AS-IS
+
+```cpp
+struct Object {
+  // 반복적인 함수 정의
+  void CallON() { state_ = State::kON; }
+  void CallOFF() { state_ = State::kOFF; }
+
+  using StateMap = std::map<State, void(Object::*)()>;
+  void Call(State s) {
+    static StateMap fn_table {
+      // element 추가시 실수할 가능성이 있음
+      {State::kON, &Object::CallON},
+      {State::kOFF, &Object::CallOFF}
+    };
+    // mapping 구조체에 따라 추가적 연간 가능성
+    auto elem = fn_table.find(s);
+    this->*(elem->second)();
+  }
+  State state_{};
+};
+
+```
+
+```cpp
+#include "invocation_binder.h"
+// CRTP
+struct Object : public InvocationBinder<Object, State> {
+  // template 함수로 State 타입의 tag 역할
+  template <State S>
+  void Invoke() {
+    state_ = S;
+  }
+  State state_{};
+};
+// element 순서, 추가 고려 등을 하지 않는다.
+// 명시적 인스턴스화
+template void Object::Invoke<State::kON>();
+template void Object::Invoke<State::kOFF>();
 ```
